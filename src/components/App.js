@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import icsToJson from "./icsToJson";
+import Moment from "react-moment";
 
 let url =
   "https://calendar.google.com/calendar/ical/pfutdblf1gi8jmfsvroh76f6jg%40group.calendar.google.com/public/basic.ics";
@@ -37,8 +38,18 @@ class App extends Component {
         <ul style={{ listStyle: "none", padding: 0 }}>
           {data.map(event => (
             <li>
-              <p>{event.startDate}</p>
-              <p>{event.endDate}</p>
+              <p>
+                <Moment format="YYYY/MM/DD">{event.startDate}</Moment>
+              </p>
+              <p>
+                <Moment format="HH:mm">{event.startDate}</Moment>
+              </p>
+              <p>
+                <Moment format="YYYY/MM/DD">{event.endDate}</Moment>
+              </p>
+              <p>
+                <Moment format="HH:mm">{event.endDate}</Moment>
+              </p>
               <p>{event.description}</p>
               <p>{event.location}</p>
               <p>{event.summary}</p>
