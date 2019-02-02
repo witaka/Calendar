@@ -12,3 +12,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.timeline-wrapper {
+  margin-left: 1.5rem;
+  border-left: 3px solid black;
+}
+.node {
+  padding-left: 0.5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.node h3,
+.node p {
+  margin: 0;
+}
+.node::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.3rem;
+  left: -0.5rem;
+}

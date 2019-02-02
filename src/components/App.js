@@ -36,6 +36,15 @@ class App extends Component {
     const { loading } = this.state;
     const { data } = this.state;
 
+    const calendarStrings = {
+      lastDay: "[Yesterday]",
+      sameDay: "[Today]",
+      nextDay: "[Tomorrow]",
+      lastWeek: "[last] dddd",
+      nextWeek: "dddd",
+      sameElse: "dddd MMM YY"
+    };
+
     if (loading) {
       return (
         <main className="App">
@@ -49,27 +58,26 @@ class App extends Component {
     return (
       <main className="App">
         <div>
-          <ul style={{ listStyle: "none", padding: 0 }}>
+          <div class="timeline-wrapper">
             {data.map(event => (
-              <li>
-                <p>
-                  <Moment format="YYYY/MM/DD">{event.startDate}</Moment>
-                </p>
-                <p>
-                  <Moment format="HH:mm">{event.startDate}</Moment>
-                </p>
-                <p>
-                  <Moment format="YYYY/MM/DD">{event.endDate}</Moment>
-                </p>
-                <p>
-                  <Moment format="HH:mm">{event.endDate}</Moment>
-                </p>
-                <p>{event.description}</p>
-                <p>{event.location}</p>
-                <p>{event.summary}</p>
-              </li>
+              <div class="node">
+                <tb>
+                  <tr>
+                    <td width="20%">
+                      <Moment calendar={calendarStrings}>
+                        {event.startDate}
+                      </Moment>
+                      <br />
+                      <Moment format="HH:mm a">{event.startDate}</Moment>
+                      <br />
+                      <Moment format="HH:mm a">{event.endDate}</Moment>
+                    </td>
+                    <td>{event.description}</td>
+                  </tr>
+                </tb>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </main>
     );
