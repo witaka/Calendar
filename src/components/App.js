@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import icsToJson from "./icsToJson";
+import currentDate from "./currentDate";
 import Moment from "react-moment";
 
 let url =
@@ -11,7 +12,7 @@ class App extends Component {
 
     this.state = {
       loading: true,
-      data: []
+      events: []
     };
   }
 
@@ -21,20 +22,21 @@ class App extends Component {
       .then(this.onLoad);
   }
 
-  onLoad = data => {
-    console.log(data);
-    data = icsToJson(data);
-    console.log(data);
+  onLoad = events => {
+    events = icsToJson(events).sort((a, b) => a.startDate - b.startDate);
+    let now = currentDate();
+    events = events.filter(e => e.startDate > now);
 
     this.setState({
       loading: false,
-      data: data
+      events: events
     });
   };
 
   render() {
     const { loading } = this.state;
-    const { data } = this.state;
+    const { events } = this.state;
+    const [first, ...rest] = events;
 
     const calendarStrings = {
       lastDay: "[Yesterday]",
@@ -59,7 +61,7 @@ class App extends Component {
       <main className="App">
         <div>
           <div class="timeline-wrapper">
-            {data.map(event => (
+            {rest.map(event => (
               <div class="node">
                 <tb>
                   <tr>
