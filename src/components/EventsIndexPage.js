@@ -4,9 +4,9 @@ import processData from "../services/processData";
 import UrlForm from "./UrlForm";
 import EventsList from "./EventsList";
 import EventDetails from "./EventDetails";
-import Moment from "react-moment";
 import Progress from "./Progress";
-import Button from "@material-ui/core/Button";
+// import SinglePerson from "../images/singlePerson";
+// import GroupOf3 from "../images/groupOf3";
 
 let url =
   "https://calendar.google.com/calendar/ical/pfutdblf1gi8jmfsvroh76f6jg%40group.calendar.google.com/public/basic.ics";
@@ -48,15 +48,6 @@ class EventsIndexPage extends Component {
     const { events } = this.state;
     const [first, ...rest] = events;
 
-    const calendarStrings = {
-      lastDay: "[Yesterday]",
-      sameDay: "[Today]",
-      nextDay: "[Tomorrow]",
-      lastWeek: "[last] dddd",
-      nextWeek: "dddd",
-      sameElse: "dddd MMM YY"
-    };
-
     if (loading) {
       return (
         <main className="App">
@@ -70,15 +61,16 @@ class EventsIndexPage extends Component {
     return (
       <main className="App">
         <div>
-          <UrlForm onSubmit={this.newFile} />
-        </div>
-        <div>
           <div class="firstEvent">
+            <h2>NEXT UP</h2>
             <EventDetails event={first} />
           </div>
           <div class="timeline-wrapper">
             <EventsList events={rest} />
           </div>
+        </div>
+        <div>
+          <UrlForm onSubmit={this.newFile} />
         </div>
       </main>
     );

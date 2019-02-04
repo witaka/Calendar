@@ -13,20 +13,22 @@ function EventDetails(props) {
   };
 
   return (
-    <div class="node">
-      <tb>
-        <tr>
-          <td width="20%">
+    <tb>
+      <tr>
+        <td>
+          <b>
             <Moment calendar={calendarStrings}>{event.startDate}</Moment>
-            <br />
+          </b>
+          <br />
+          <b>
             <Moment format="HH:mm a">{event.startDate}</Moment>
-            <br />
-            <Moment format="HH:mm a">{event.endDate}</Moment>
-          </td>
-          <td>{event.description}</td>
-        </tr>
-      </tb>
-    </div>
+          </b>
+          <br />
+          <Moment format="HH:mm a">{event.endDate}</Moment>
+        </td>
+        <td>{event.description}</td>
+      </tr>
+    </tb>
   );
 }
 

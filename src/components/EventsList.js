@@ -4,7 +4,11 @@ import EventDetails from "./EventDetails";
 function EventsList(props) {
   const { events } = props;
 
-  return events.map(event => <EventDetails event={event} />);
+  return events.map(event => (
+    <div class="node">
+      <EventDetails event={event} />
+    </div>
+  ));
 }
 
 export default EventsList;

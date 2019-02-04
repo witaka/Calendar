@@ -6,7 +6,7 @@ import purple from "@material-ui/core/colors/purple";
 
 const styles = theme => ({
   progress: {
-    margin: theme.spacing.unit * 2
+    margin: theme.spacing.unit * 8
   }
 });
 

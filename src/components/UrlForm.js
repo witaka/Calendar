@@ -17,17 +17,15 @@ function UrlForm(props) {
   };
 
   return (
-    <Paper style={{ padding: "4%" }}>
-      <form style={{ width: "900px", padding: "20px" }} onSubmit={handleSubmit}>
-        <h1>Download link</h1>
-        <div>
-          <input id="url" name="url" type="link" />
-        </div>
-        <Button color="primary" variant="contained" type="submit">
-          Download
+    <nav className="NavBar">
+      <form className="NavForm" onSubmit={handleSubmit}>
+        <p>Update Calendar from URL</p>
+        <input id="url" name="url" type="link" />
+        <Button color="inherit" variant="contained" type="submit">
+          Update
         </Button>
       </form>
-    </Paper>
+    </nav>
   );
 }
 

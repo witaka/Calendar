@@ -6,6 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 code {
@@ -45,5 +48,56 @@ code {
 .firstEvent {
   border: 2px solid black;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 15px;
+}
+
+.NavBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: black;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
+.NavForm {
+  width: 900px;
+  padding: 20px;
+}
+
+.NavForm input {
+  width: 70%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.node td:first-child {
+  width: 30%;
+  border-left: none;
+}
+
+.node td {
+  padding-top: 2%;
+  border-left: 2px solid black;
+  padding-left: 2%;
+}
+
+.firstEvent td:first-child {
+  width: 30%;
+  border-left: none;
+}
+
+.firstEvent td {
+  padding-top: 2%;
+  border-left: 2px solid black;
+  padding-left: 2%;
+}
+
+.firstEvent h2 {
+  float: right;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
