@@ -1,5 +1,3 @@
-import React from "react";
-
 const currentDate = () => {
   let today = new Date(),
     date =

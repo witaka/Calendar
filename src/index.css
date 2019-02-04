@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -16,6 +16,10 @@ code {
 .timeline-wrapper {
   margin-left: 1.5rem;
   border-left: 2px solid black;
+}
+.timeline-wrapper .node:last {
+  margin-left: 1.5rem;
+  border-left: none;
 }
 .node {
   padding-left: 0.5rem;
@@ -35,5 +39,11 @@ code {
   border-radius: 50%;
   position: absolute;
   top: 0.3rem;
-  left: -0.5rem;
+  left: -0.45rem;
+}
+
+.firstEvent {
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 12px;
 }

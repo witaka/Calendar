@@ -24,8 +24,12 @@ class App extends Component {
 
   onLoad = events => {
     events = icsToJson(events).sort((a, b) => a.startDate - b.startDate);
+
     let now = currentDate();
     events = events.filter(e => e.startDate > now);
+    events.forEach(
+      event => (event.description = event.description.replace(/\\n|\\/gm, ""))
+    );
 
     this.setState({
       loading: false,
@@ -60,6 +64,29 @@ class App extends Component {
     return (
       <main className="App">
         <div>
+          <div class="firstEvent">
+            <tb>
+              <tr>
+                <td width="20%">
+                  <b>
+                    <Moment calendar={calendarStrings}>
+                      {first.startDate}
+                    </Moment>
+                  </b>
+                  <br />
+                  <b>
+                    <Moment format="HH:mm a">{first.startDate}</Moment>
+                  </b>
+                  <br />
+                  <Moment format="HH:mm a">{first.endDate}</Moment>
+                </td>
+                <td>
+                  <p style={{ whiteSpace: "pre-wrap" }}>{first.description}</p>
+                </td>
+              </tr>
+            </tb>
+          </div>
+
           <div class="timeline-wrapper">
             {rest.map(event => (
               <div class="node">
