@@ -13,22 +13,26 @@ function EventDetails(props) {
   };
 
   return (
-    <tb>
-      <tr>
-        <td>
-          <b>
-            <Moment calendar={calendarStrings}>{event.startDate}</Moment>
-          </b>
-          <br />
-          <b>
-            <Moment format="HH:mm a">{event.startDate}</Moment>
-          </b>
-          <br />
-          <Moment format="HH:mm a">{event.endDate}</Moment>
-        </td>
-        <td>{event.description}</td>
-      </tr>
-    </tb>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <b>
+                <Moment calendar={calendarStrings}>{event.startDate}</Moment>
+              </b>
+              <br />
+              <b>
+                <Moment format="HH:mm a">{event.startDate}</Moment>
+              </b>
+              <br />
+              <Moment format="HH:mm a">{event.endDate}</Moment>
+            </td>
+            <td>{event.description}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 }
 

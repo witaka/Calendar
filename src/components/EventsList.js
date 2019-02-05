@@ -3,9 +3,9 @@ import EventDetails from "./EventDetails";
 
 function EventsList(props) {
   const { events } = props;
-
+  let i = 0;
   return events.map(event => (
-    <div class="node">
+    <div className="node" key={i++}>
       <EventDetails event={event} />
     </div>
   ));

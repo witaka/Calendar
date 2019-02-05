@@ -34,6 +34,7 @@ code {
   margin: 0;
 }
 .node::before {
+  letter-spacing: 5px;
   content: "";
   width: 0.5rem;
   height: 0.5rem;
@@ -41,16 +42,14 @@ code {
   border: 2px solid black;
   border-radius: 50%;
   position: absolute;
-  top: 0.3rem;
+  top: 3.5rem;
   left: -0.45rem;
 }
-
 .firstEvent {
   border: 2px solid black;
   padding: 15px;
   border-radius: 15px;
 }
-
 .NavBar {
   display: flex;
   flex-wrap: wrap;
@@ -59,12 +58,10 @@ code {
   border-radius: 15px;
   border: 2px solid black;
 }
-
 .NavForm {
   width: 900px;
   padding: 20px;
 }
-
 .NavForm input {
   width: 70%;
   padding: 10px;
@@ -72,32 +69,50 @@ code {
   border-radius: 5px;
   border: 2px solid black;
 }
-
 .node td:first-child {
   width: 30%;
   border-left: none;
 }
-
 .node td {
   padding-top: 2%;
   border-left: 2px solid black;
   padding-left: 2%;
 }
-
+.firstEvent {
+  font-size: 14pt;
+}
 .firstEvent td:first-child {
   width: 30%;
   border-left: none;
 }
-
 .firstEvent td {
   padding-top: 2%;
   border-left: 2px solid black;
   padding-left: 2%;
 }
-
 .firstEvent h2 {
-  float: right;
+  width: 95%;
+  text-align: right;
   font-weight: 400;
   margin: 0;
   padding: 0;
+  margin-bottom: 1%;
+}
+.firstEvent div {
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+}
+.groupOf3Img {
+  width: 25%;
+  height: auto;
+  margin-right: 10px;
+}
+.singlePersonImg {
+  width: 8%;
+  height: auto;
+  margin-right: 10px;
+}
+.firstEvent div > div h3 {
+  font-weight: 400;
 }
