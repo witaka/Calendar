@@ -48,8 +48,7 @@ class EventsIndexPage extends Component {
   };
 
   render() {
-    const { loading } = this.state;
-    const { events } = this.state;
+    const { loading, events } = this.state;
     const [first, ...rest] = events;
 
     if (loading) {
