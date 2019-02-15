@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchEvents } from "../redux/actions/index";
+
 import Events from "../requests/events";
 import processData from "../services/processData";
 import UrlForm from "./UrlForm";
 import EventsList from "./EventsList";
 import EventDetails from "./EventDetails";
-import Progress from "./Progress";
+// import Progress from "./Progress";
 import singlePerson from "../images/singlePerson.png";
 import groupOf3 from "../images/groupOf3.png";
 
@@ -12,58 +15,36 @@ let url =
   "https://calendar.google.com/calendar/ical/pfutdblf1gi8jmfsvroh76f6jg%40group.calendar.google.com/public/basic.ics";
 
 class EventsIndexPage extends Component {
-  constructor(props) {
-    super(props);
-    this.newFile = this.newFile.bind(this);
-
-    this.state = {
-      loading: true,
-      events: []
-    };
-  }
-
-  componentDidMount() {
-    Events.getFile(url).then(events => {
-      events = processData(events);
-      this.setState({
-        loading: false,
-        events: events
-      });
-    });
-  }
+  // componentDidMount() {
+  //   console.log("did");
+  //   this.props.dispatch(fetchEvents());
+  // }
 
   newFile = params => {
-    this.setState({
-      loading: true,
-      events: []
-    });
-
-    Events.getFile(params).then(events => {
-      events = processData(events);
-      this.setState({
-        loading: false,
-        events: events
-      });
-    });
+    this.props.dispatch(fetchEvents(params));
   };
 
   render() {
-    const { loading, events } = this.state;
-    const [first, ...rest] = events;
+    const { error, loading, events } = this.props;
+    console.log("!!!!!!!!!!!!", events);
+    console.log("!!!!!!!!!!!!", loading);
 
     if (loading) {
       return (
         <main className="App">
           <div>
-            <Progress />
+            {/* <Progress /> */}
+            Loding...
           </div>
         </main>
       );
     }
 
+    // const [first, ...rest] = events;
+
     return (
       <main className="App">
-        <div>
+        {/* <div>
           <div className="firstEvent">
             <div
               style={{
@@ -87,7 +68,7 @@ class EventsIndexPage extends Component {
           <div className="timeline-wrapper">
             <EventsList events={rest} />
           </div>
-        </div>
+        </div>*/}
         <div>
           <UrlForm onSubmit={this.newFile} />
         </div>
@@ -96,4 +77,10 @@ class EventsIndexPage extends Component {
   }
 }
 
-export default EventsIndexPage;
+const mapStateToProps = state => ({
+  events: state.events,
+  loading: state.loading,
+  error: state.error
+});
+
+export default connect(mapStateToProps)(EventsIndexPage);

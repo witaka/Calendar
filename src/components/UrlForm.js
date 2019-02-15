@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 
 function UrlForm(props) {
   const { onSubmit = () => {} } = props;
@@ -20,9 +20,9 @@ function UrlForm(props) {
       <form className="NavForm" onSubmit={handleSubmit}>
         <p>Update Calendar from URL</p>
         <input id="url" name="url" type="link" />
-        <Button color="inherit" variant="contained" type="submit">
+        <button color="inherit" variant="contained" type="submit">
           Update
-        </Button>
+        </button>
       </form>
     </nav>
   );
