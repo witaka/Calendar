@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchEvents } from "../redux/actions/index";
-import Events from "../requests/events";
-import processData from "../services/processData";
 import EventsList from "./EventsList";
 import EventDetails from "./EventDetails";
 import Progress from "./Progress";

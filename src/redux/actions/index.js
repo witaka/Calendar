@@ -19,13 +19,6 @@ export function fetchEvents(params) {
   };
 }
 
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}
-
 export const fetchEventsBegin = () => ({
   type: FETCH_EVENTS_BEGIN
 });
