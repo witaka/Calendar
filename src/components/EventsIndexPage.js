@@ -5,7 +5,7 @@ import Events from "../requests/events";
 import processData from "../services/processData";
 import EventsList from "./EventsList";
 import EventDetails from "./EventDetails";
-// import Progress from "./Progress";
+import Progress from "./Progress";
 import singlePerson from "../images/singlePerson.png";
 import groupOf3 from "../images/groupOf3.png";
 
@@ -21,8 +21,7 @@ class EventsIndexPage extends Component {
       return (
         <main className="App">
           <div>
-            {/* <Progress /> */}
-            Loding...
+            <Progress />
           </div>
         </main>
       );

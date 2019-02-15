@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchEvents } from "../redux/actions/index";
-// import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
 
 const mapDispatchToProps = {
   fetchEvents
@@ -22,11 +22,11 @@ function UrlForm(props) {
   return (
     <nav className="NavBar">
       <form className="NavForm" onSubmit={handleSubmit}>
-        <p>Update Calendar from URL</p>
+        <p>Open Calendar from URL</p>
         <input id="url" name="url" type="link" />
-        <button color="inherit" variant="contained" type="submit">
-          Update
-        </button>
+        <Button color="inherit" variant="contained" type="submit">
+          Open
+        </Button>
       </form>
     </nav>
   );
