@@ -12,10 +12,7 @@ export function fetchEvents(params) {
     dispatch(fetchEventsBegin());
     return Events.getFile(url)
       .then(events => {
-        console.log("!!!!!!!!!!!!1", events);
-
-        events = processData(events);
-        dispatch(fetchEventsSuccess(events));
+        dispatch(fetchEventsSuccess(processData(events)));
         return events;
       })
       .catch(error => dispatch(fetchEventsFailure(error)));

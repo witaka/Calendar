@@ -1,11 +1,3 @@
-// const initialState = {
-//   events: []
-// };
-// function rootReducer(state = initialState, action) {
-//   return state;
-// }
-// export default rootReducer;
-
 import {
   FETCH_EVENTS_BEGIN,
   FETCH_EVENTS_SUCCESS,
@@ -13,9 +5,9 @@ import {
 } from "../constants/action-types";
 
 const initialState = {
-  events: [],
   loading: false,
-  error: null
+  error: null,
+  events: []
 };
 
 export default function productReducer(state = initialState, action) {
@@ -28,10 +20,11 @@ export default function productReducer(state = initialState, action) {
       };
 
     case FETCH_EVENTS_SUCCESS:
+      console.log("action.payload.events", action.payload.events);
       return {
         ...state,
         loading: false,
-        events: action.payload.products
+        events: action.payload.events
       };
 
     case FETCH_EVENTS_FAILURE:
