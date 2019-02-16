@@ -14,9 +14,11 @@ function UrlForm(props) {
 
     const formData = new FormData(currentTarget);
     const newUrl = formData.get("url");
-    props.fetchEvents(newUrl);
-    currentTarget.reset();
-    props.history.push("/calendar");
+    if (newUrl) {
+      props.fetchEvents(newUrl);
+      currentTarget.reset();
+      props.history.push("/calendar");
+    }
   };
 
   return (
