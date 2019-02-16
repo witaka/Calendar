@@ -12,6 +12,7 @@ export function fetchEvents(params) {
     dispatch(fetchEventsBegin());
     return Events.getFile(url)
       .then(events => {
+        console.log(events.length);
         dispatch(fetchEventsSuccess(processData(events)));
         return events;
       })
