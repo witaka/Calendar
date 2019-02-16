@@ -10,7 +10,7 @@ const initialState = {
   events: []
 };
 
-export default function productReducer(state = initialState, action) {
+export default function eventsReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_EVENTS_BEGIN:
       return {
@@ -20,10 +20,10 @@ export default function productReducer(state = initialState, action) {
       };
 
     case FETCH_EVENTS_SUCCESS:
-      console.log("action.payload.events", action.payload.events);
       return {
         ...state,
         loading: false,
+        error: null,
         events: action.payload.events
       };
 

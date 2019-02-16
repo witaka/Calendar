@@ -10,9 +10,9 @@ let url =
 export function fetchEvents(params) {
   return dispatch => {
     dispatch(fetchEventsBegin());
-    return Events.getFile(url)
+    return Events.getFile(params)
       .then(events => {
-        console.log(events.length);
+        console.log(processData(events));
         dispatch(fetchEventsSuccess(processData(events)));
         return events;
       })
