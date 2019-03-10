@@ -1,14 +1,118 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.timeline-wrapper {
+  margin-left: 1.5rem;
+  border-left: 2px solid black;
+}
+.timeline-wrapper .node:last {
+  margin-left: 1.5rem;
+  border-left: none;
+}
+.node {
+  padding-left: 0.5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.node h3,
+.node p {
+  margin: 0;
+}
+.node::before {
+  letter-spacing: 5px;
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 3.5rem;
+  left: -0.45rem;
+}
+.firstEvent {
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 15px;
+}
+.NavBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: black;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+.NavForm {
+  width: 900px;
+  padding: 20px;
+}
+.NavForm input {
+  width: 70%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.node td:first-child {
+  width: 30%;
+  border-left: none;
+}
+.node td {
+  padding-top: 2%;
+  border-left: 2px solid black;
+  padding-left: 2%;
+}
+.firstEvent {
+  font-size: 14pt;
+}
+.firstEvent td:first-child {
+  width: 30%;
+  border-left: none;
+}
+.firstEvent td {
+  padding-top: 2%;
+  border-left: 2px solid black;
+  padding-left: 2%;
+}
+.firstEvent h2 {
+  width: 95%;
+  text-align: right;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1%;
+}
+.firstEvent div {
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+}
+.groupOf3Img {
+  width: 25%;
+  height: auto;
+  margin-right: 10px;
+}
+.singlePersonImg {
+  width: 8%;
+  height: auto;
+  margin-right: 10px;
+}
+.firstEvent div > div h3 {
+  font-weight: 400;
 }
