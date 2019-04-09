@@ -4,13 +4,9 @@ import {
   FETCH_EVENTS_FAILURE
 } from "../constants/action-types";
 
-const initialState = {
-  loading: false,
-  error: null,
-  events: []
-};
+import { INITIAL_STATE } from "../constants/initialState";
 
-export default function eventsReducer(state = initialState, action) {
+export default function eventsReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case FETCH_EVENTS_BEGIN:
       return {
